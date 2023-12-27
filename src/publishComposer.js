@@ -9,7 +9,7 @@ module.exports = async (pluginConfig, context) => {
     } = context;
 
     if (!nextRelease.notes) {
-        logger.log("No changelog generated. Skip Merge Request");
+        logger.log("No changelog generated. Skip publishing composer package.");
         return;
     }
 
@@ -23,5 +23,5 @@ module.exports = async (pluginConfig, context) => {
         }
     })
         .then((res) => logger.log("Successfully published new release to gitlab package registry."))
-        .catch((err) => throw new SemanticReleaseError("Could not publish release to gitlab package registry.", "EPUBLISHPACKAGE", err.message));
+        .catch((err) => console.error(err));
 }
