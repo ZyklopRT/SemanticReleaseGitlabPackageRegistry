@@ -1,6 +1,12 @@
 {
-  "name": "semantic-release-gitlab-package-registry",
+  "name": "@jjansen/semantic-release-gitlab-package-registry",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "author": "Justin Jansen <info@zyklopspace.de>",
+  "license": "MIT",
+  "dependencies": {
+    "@semantic-release/error": "^4.0.0",
+    "aggregate-error": "^5.0.0",
+    "axios": "^1.6.3"
+  }
 }
