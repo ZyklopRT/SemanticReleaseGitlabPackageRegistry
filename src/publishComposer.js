@@ -1,7 +1,7 @@
 import axios from 'axios';
 import SemanticReleaseError from "@semantic-release/error";
 
-module.exports = async (pluginConfig, context) => {
+export default async (pluginConfig, context) => {
     const {
         options: {repositoryUrl, branch},
         logger,

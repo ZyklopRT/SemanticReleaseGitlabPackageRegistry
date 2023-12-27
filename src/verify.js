@@ -2,7 +2,7 @@ import fs from 'fs';
 import SemanticReleaseError from "@semantic-release/error";
 import AggregateError from "aggregate-error";
 
-module.exports = async (pluginConfig, context) => {
+export default async (pluginConfig, context) => {
     const {
         cwd,
         env,
