@@ -5,10 +5,11 @@ export default async (pluginConfig, context) => {
     const {
         options: {repositoryUrl, branch},
         logger,
-        nextRelease
+        nextRelease,
+        env
     } = context;
 
-    if (!nextRelease.notes) {
+    if (!nextRelease?.notes) {
         logger.log("No changelog generated. Skip publishing composer package.");
         return;
     }
