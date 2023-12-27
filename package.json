@@ -1,6 +1,7 @@
 {
   "name": "@jjansen/semantic-release-gitlab-composer-package",
-  "version": "1.0.14",
+  "description": "semantic-release plugin to publish a composer package to the gitlab package registry",
+  "version": "1.0.15",
   "type": "module",
   "main": "index.js",
   "author": "Justin Jansen <info@zyklopspace.de>",
@@ -9,5 +10,21 @@
     "@semantic-release/error": "^4.0.0",
     "aggregate-error": "^5.0.0",
     "axios": "^1.6.3"
+  },
+  "keywords": [
+    "composer",
+    "publish",
+    "registry",
+    "semantic-release",
+    "version",
+    "gitlab"
+  ],
+  "homepage": "https://github.com/ZyklopRT/SemanticReleaseGitlabPackageRegistry#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZyklopRT/SemanticReleaseGitlabPackageRegistry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZyklopRT/SemanticReleaseGitlabPackageRegistry/issues"
   }
 }
