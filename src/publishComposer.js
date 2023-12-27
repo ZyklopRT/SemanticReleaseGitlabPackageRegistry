@@ -1,5 +1,5 @@
 import axios from 'axios';
-import SemanticReleaseError from "@semantic-release/error";
+import apiUrl from "./apiUrl.js";
 
 export default async (pluginConfig, context) => {
     const {
@@ -14,13 +14,15 @@ export default async (pluginConfig, context) => {
         return;
     }
 
-    const apiUrl = `${env.CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/composer`;
+    const {gitlabToken, gitlabApiUrl, gitlabProjectId} = apiUrl(pluginConfig, env);
+
+    const apiUrl = `${gitlabApiUrl}/projects/${gitlabProjectId}/packages/composer`;
     const data = {
         'tag': nextRelease.gitTag
     }
     axios.post(apiUrl, data, {
         headers: {
-            'JOB-TOKEN': env.CI_JOB_TOKEN
+            'JOB-TOKEN': gitlabToken
         }
     })
         .then((res) => logger.log(`Successfully published ${nextRelease.gitTag} composer package.`))

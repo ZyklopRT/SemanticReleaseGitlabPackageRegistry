@@ -1,6 +1,7 @@
 import fs from 'fs';
 import SemanticReleaseError from "@semantic-release/error";
 import AggregateError from "aggregate-error";
+import apiUrl from "./apiUrl.js";
 
 export default async (pluginConfig, context) => {
     const {
@@ -17,8 +18,18 @@ export default async (pluginConfig, context) => {
         errors.push(new SemanticReleaseError(`${composerJsonFile} not found.`, 'EVERIFYCOMPOSER'));
     }
 
-    if (!env.CI_JOB_TOKEN || !env.CI_PROJECT_ID || !env.CI_API_V4_URL) {
-        errors.push(new SemanticReleaseError(`Gitlab predefined CI/CD variables $CI_JOB_TOKEN, $CI_PROJECT_ID, $CI_API_V4_URL not found.`, 'EVERIFYCIVARS'));
+    const {gitlabToken, gitlabApiUrl, gitlabProjectId} = apiUrl(pluginConfig, env)
+
+    if (!gitlabToken) {
+        errors.push(new SemanticReleaseError(`Access token variable could not be guessed.`, 'EVERIFYACCESS'));
+    }
+
+    if (!gitlabApiUrl) {
+        errors.push(new SemanticReleaseError(`API url variable could not be guessed.`, 'EVERIFYAPIURL'));
+    }
+
+    if (!gitlabProjectId) {
+        errors.push(new SemanticReleaseError(`Project id variable could not be guessed.`, 'EVERIFYPROJECTID'));
     }
 
     if (errors.length > 0) {
