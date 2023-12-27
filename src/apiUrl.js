@@ -17,7 +17,7 @@ export default async ({gitlabApiPathPrefix, gitlabUrl}, env) => {
     }
 
     return {
-        gitlabToken: env.GL_TOKEN || env.GITLAB_TOKEN || env.CI_JOB_TOKEN,
+        gitlabToken: env.CI_JOB_TOKEN || env.GL_TOKEN || env.GITLAB_TOKEN,
         gitlabApiUrl: gitlabApiUrl,
         gitlabProjectId: env.GL_PROJECT_ID || env.GITLAB_PROJECT_ID || env.CI_PROJECT_ID,
     }
