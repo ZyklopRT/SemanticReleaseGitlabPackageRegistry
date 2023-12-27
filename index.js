@@ -1,5 +1,5 @@
-import verify from './src/verify';
-import publishComposer from './src/publishComposer';
+import verify from './src/verify.js';
+import publishComposer from './src/publishComposer.js';
 
 let verified;
 
