@@ -1,6 +1,7 @@
 {
   "name": "@jjansen/semantic-release-gitlab-composer-package",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "type": "module",
   "main": "index.js",
   "author": "Justin Jansen <info@zyklopspace.de>",
   "license": "MIT",
