@@ -18,7 +18,7 @@ export default async (pluginConfig, context) => {
         errors.push(new SemanticReleaseError(`${composerJsonFile} not found.`, 'EVERIFYCOMPOSER'));
     }
 
-    const {gitlabToken, gitlabApiUrl, gitlabProjectId} = apiUrl(pluginConfig, env)
+    const {gitlabToken, gitlabApiUrl, gitlabProjectId} = await apiUrl(pluginConfig, env)
 
     if (!gitlabToken) {
         errors.push(new SemanticReleaseError(`Access token variable could not be guessed.`, 'EVERIFYACCESS'));

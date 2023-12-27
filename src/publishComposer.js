@@ -14,7 +14,7 @@ export default async (pluginConfig, context) => {
         return;
     }
 
-    const {gitlabToken, gitlabApiUrl, gitlabProjectId} = apiUrl(pluginConfig, env);
+    const {gitlabToken, gitlabApiUrl, gitlabProjectId} = await apiUrl(pluginConfig, env);
 
     const apiUrl = `${gitlabApiUrl}/projects/${gitlabProjectId}/packages/composer`;
     const data = {
