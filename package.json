@@ -1,5 +1,5 @@
 {
-  "name": "@jjansen/semantic-release-gitlab-package-registry",
+  "name": "@jjansen/semantic-release-gitlab-composer-package",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Justin Jansen <info@zyklopspace.de>",

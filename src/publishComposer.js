@@ -1,5 +1,5 @@
-const axios = require('axios');
-const SemanticReleaseError = require("@semantic-release/error");
+import axios from 'axios';
+import SemanticReleaseError from "@semantic-release/error";
 
 module.exports = async (pluginConfig, context) => {
     const {

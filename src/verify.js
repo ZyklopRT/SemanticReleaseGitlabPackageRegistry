@@ -1,6 +1,6 @@
-const AggregateError = require('aggregate-error');
-const SemanticReleaseError = require("@semantic-release/error");
-const fs = require('fs');
+import fs from 'fs';
+import SemanticReleaseError from "@semantic-release/error";
+import AggregateError from "aggregate-error";
 
 module.exports = async (pluginConfig, context) => {
     const {

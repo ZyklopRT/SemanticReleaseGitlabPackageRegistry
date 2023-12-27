@@ -1,6 +1,5 @@
-const verify = require("./src/verify");
-
-const publishComposer = require("./src/publishComposer");
+import verify from './src/verify';
+import publishComposer from './src/publishComposer';
 
 let verified;
 
